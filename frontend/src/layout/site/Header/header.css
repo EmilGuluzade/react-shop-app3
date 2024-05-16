@@ -1,0 +1,22 @@
+.home_menu .main-menu-item {
+    justify-content: center !important;
+}
+header{
+   background-color: #ecfdff;
+}
+.main_menu .main-menu-item ul li .nav-link {
+    color: #000;
+    font-size: 15px;
+    padding: 36px 23px;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    line-height: 12px;
+    font-weight: 400;
+}
+
+.hearer_icon a{
+    color: black;
+}
+.hearer_icon{
+    gap: 20px;
+}
