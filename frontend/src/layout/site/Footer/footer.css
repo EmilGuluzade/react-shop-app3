@@ -1,0 +1,93 @@
+.footer_part {
+    padding: 130px 0 25px;
+    
+}
+
+.footer_part ul li a {
+    color: #7f7f7f;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer_part h4 {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 30px;
+}
+
+.footer_part p {
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color: #000;
+    font-weight: 300;
+}
+
+.footer_part form {
+    position: relative;
+}
+
+.footer_part input {
+    padding: 20px 15px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    margin-top: 20px;
+    width: 80%;
+    background-color: #f9f9fe;
+    border: none;
+    outline: none;
+}
+
+.footer_part button {
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    background-color: #ff3368;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 10px;
+    padding: 12px 25px;
+    outline: none;
+    border: none;
+    border: 2px solid #ff3368;
+}
+
+.copyright_text a {
+    text-decoration: none;
+    color: #ff3368;
+}
+
+.copyright_part {
+    margin-top: 45px;
+}
+
+.copyright_part p {
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color: #888;
+    font-weight: 300;
+}
+
+.social_icon ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.social_icon ul li a {
+    padding: 5px 11px;
+    transition: 0.5s;
+}
+
+.social_icon ul li a:hover {
+    background-color: #ff3368;
+    box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+    color: #fff !important;
+    transition: 0.5s;
+}

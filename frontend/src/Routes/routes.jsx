@@ -5,6 +5,8 @@ import Add from "../pages/admin/add/add"
 import Error from "../pages/error/error/error"
 import SiteRoot from "../pages/site/SiteRoot"
 import Home from "../pages/site/home/home"
+import Basket from "../pages/site/Basket/Basket"
+import Detail from "../pages/site/Detail/Detail"
 
 const ROUTES =[
     {
@@ -14,6 +16,14 @@ const ROUTES =[
             {
                 path:"",
                 element:<Home/>
+            },
+            {
+                path:"/basket",
+                element:<Basket/>
+            },{
+                path:"/detail/:id",
+                element: <Detail/>
+
             }
         ]
     },

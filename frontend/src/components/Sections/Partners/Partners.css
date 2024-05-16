@@ -1,0 +1,20 @@
+.client_logo .single_client_logo {
+    height: 125px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #edeff2;
+    width: 20%;
+    float: left;
+    border-bottom: 1px solid #edeff2;
+    
+}
+.client_logo .single_client_logo img {
+    filter: grayscale(1);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.client_logo{
+    padding-top: 140px;
+}

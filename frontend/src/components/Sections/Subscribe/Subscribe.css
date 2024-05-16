@@ -1,0 +1,46 @@
+.subscribe_area {
+    background-image: url("	https://preview.colorlib.com/theme/aranoz/img/subscribe_area.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 140px 0px;
+}
+.subscribe_area h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ff3368;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.subscribe_area h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    margin: 35px 0 67px;
+}
+.subscribe_area .input-group input {
+    height: 60px;
+    padding-left: 25px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+border: none !important;
+    outline: 0;
+   
+}
+.subscribe_area .input-group .input-group-text {
+    height: 60px;
+    width: auto;
+    line-height: 60px;
+    padding: 0px 45px;
+    border: 0px solid transparent;
+    background-image: linear-gradient(16deg, #ff005a 0%, #ff5d2d 64%, #ffba00 100%);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-left: 10px;
+}

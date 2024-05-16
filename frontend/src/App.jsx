@@ -22,13 +22,14 @@ function App() {
   useEffect(() => {
    localStorage.setItem("basket",JSON.stringify(basket))
   }, [basket]);
-  const contextData = { data, setdata, loading, setLoading, error, setError ,addToBasket}
+  const contextData = { data, setdata, loading, setLoading, error, setError,basket ,addToBasket,deleteFromBasket}
 
   function addToBasket(id) {
-let basketItem=basket.finst(x=>x._id==id)
+let basketItem=basket.find(x=>x._id==id)
    if (basketItem) {
     basketItem.count++,
     basketItem.totalPrice+=basketItem.price
+    setBasket([...basket])
    } else {
     let target =data.find(x=>x._id==id)
     let newItem={
@@ -39,6 +40,19 @@ let basketItem=basket.finst(x=>x._id==id)
 
     setBasket([...basket,newItem])
    } 
+  }
+
+  function deleteFromBasket(id) {
+    let target= basket.find(x=>x._id==id)
+   if (target.count>1) {
+    target.count--
+    target.totalPrice-=target.price
+    setBasket([...basket])
+   } else {
+    let indexOfTarget=basket.indexOf(target)
+    basket.splice(indexOfTarget,1)
+    setBasket([...basket])
+   }
   }
   return (
     <>

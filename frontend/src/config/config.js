@@ -1,1 +1,1 @@
-export const   BASE_URL="http://localhost:8080/api/blogs"
+export const  BASE_URL="http://localhost:8080/api/blogs/"

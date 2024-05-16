@@ -140,17 +140,17 @@ const Header = () => {
                   <i class="fa-regular fa-heart"></i>
                 </a>
                 <div class="dropdown cart">
-                  <a
+                  <Link
                     class="dropdown-toggle"
-                    href="#"
+                    to="basket"
                     id="navbarDropdown3"
                     role="button"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <i class="fas fa-cart-plus"></i>
-                  </a>
+                    <i class=" fas fa-cart-plus"></i>
+                  </Link>
                 </div>
               </div>
             </nav>
