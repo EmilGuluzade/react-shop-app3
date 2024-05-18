@@ -11,35 +11,31 @@ const [filter, setFilter] = useState([])
 
 useEffect(()=>{
 axios.get(BASE_URL).then(res=>{
-  if (inpVal.trim!="") {
-    let datas=res.data.filter(x=>{
-    return  x.title.trim().toLowerCase().includes(inpVal.trim().toLowerCase())
-    })
-    setFilter([...datas])
+  if (inpVal.trim()!="") {
+    setFilter([...res.data.filter((item)=>item.title.toLowerCase().includes(inpVal.trim().toLowerCase()))])
+
+
+
+
   }else{
     setFilter([...res.data])
   }
 })
 },[inpVal])
 
-function sertByPrice(value){
-  switch (value) {
-    case "def":
-      axios.get(BASE_URL).then(res=>[
-        setFilter([...res.data])
-      ])
-      break;
-      case "low":
-        setFilter([...data.sort((a,b)=>a.price-b.brice)])
-      break;
-      case "high":
-        setFilter([...data.sort((a,b)=>b.price-a.brice)])
-      
-      break;
-    default:
-      break;
-  }
-}
+function setByPrice(value){
+if (value=="high") {
+  setFilter([...filter.sort((a,b)=>b.price-a.brice)])
+  
+} else if(value=="low"){
+  setFilter([...filter.sort((a,b)=>a.price-b.brice)])
+  
+}else{
+  axios.get(BASE_URL).then(res=>[
+    setFilter([...res.data])
+  ])
+} }
+
   return (
     <section className="awesome">
       <div className="container">
@@ -47,12 +43,12 @@ function sertByPrice(value){
           <div class="col-lg-12">
             <div class="section_tittle d-flex align-items-center  ">
               <h2>Awesome</h2>
-              <input onChange={()=>{
+              <input value={inpVal}  onChange={(e)=>{
                 setInpVal(e.target.value)
               }} type="text" placeholder="Search " />
 
-              <select onChange={(e)=>{
-                sertByPrice(e.target.value)
+              <select  onChange={(e)=>{
+                setByPrice(e.target.value)
               }}  id="price">
                 <option value="def">defaul</option>
                 <option value="low">Low To High</option>

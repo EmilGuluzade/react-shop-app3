@@ -11,6 +11,6 @@ body{
 .container {
     max-width: 1170px;
 }
-a{
+a{color: black;
     text-decoration: none;margin: 0;
 }
