@@ -1,16 +1,20 @@
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-ul{
-    margin: 0;
+ul {
+  margin: 0;
 }
-body{
-    font-family: "Poppins", sans-serif;
-    color: #212529;
+body {
+  font-family: "Poppins", sans-serif;
+  color: #212529;
 }
 .container {
-    max-width: 1170px;
+  max-width: 1170px;
 }
-a{color: black;
-    text-decoration: none;margin: 0;
+a {
+  color: black;
+  text-decoration: none;
+  margin: 0;
 }

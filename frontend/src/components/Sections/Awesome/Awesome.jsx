@@ -2,39 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Awesome.css";
 import MainContext from "../../../context/context";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { BASE_URL } from "../../../config/config";
+
 const Awesome = () => {
-  const {  addToBasket } = useContext(MainContext);
+  const {  data,addToBasket } = useContext(MainContext);
 const [inpVal, setInpVal] = useState("")
-const [filter, setFilter] = useState([])
+const [sortBy, setSortBy] = useState(null)
 
-useEffect(()=>{
-axios.get(BASE_URL).then(res=>{
-  if (inpVal.trim()!="") {
-    setFilter([...res.data.filter((item)=>item.title.toLowerCase().includes(inpVal.trim().toLowerCase()))])
-
-
-
-
-  }else{
-    setFilter([...res.data])
-  }
-})
-},[inpVal])
-
-function setByPrice(value){
-if (value=="high") {
-  setFilter([...filter.sort((a,b)=>b.price-a.brice)])
-  
-} else if(value=="low"){
-  setFilter([...filter.sort((a,b)=>a.price-b.brice)])
-  
-}else{
-  axios.get(BASE_URL).then(res=>[
-    setFilter([...res.data])
-  ])
-} }
 
   return (
     <section className="awesome">
@@ -46,23 +19,31 @@ if (value=="high") {
               <input value={inpVal}  onChange={(e)=>{
                 setInpVal(e.target.value)
               }} type="text" placeholder="Search " />
+              <button onClick={()=>setSortBy({field:"title",asc:true})} className="btn btn-primary mx-3  ">A-Z</button>
+              <button onClick={()=>setSortBy({field:"title",asc:false})} className="btn btn-primary mx-3 ">Z-A</button>
+              <button onClick={()=>setSortBy({field:"price",asc:false})} className="btn btn-primary v">Low To High</button>
+              <button onClick={()=>setSortBy({field:"price",asc:true})} className="btn btn-primary mx-3 ">High To Low</button>
 
-              <select  onChange={(e)=>{
-                setByPrice(e.target.value)
-              }}  id="price">
-                <option value="def">defaul</option>
-                <option value="low">Low To High</option>
-
-                <option value="high">High To Low</option>
-
-              </select>
             </div>
           </div>
         </div>
 
         <div className="row">
           <div className="cards row">
-            {filter.map((item, index) => (
+            {data
+            .filter(x=>x.title.toLowerCase().includes(inpVal.toLowerCase()))
+            .sort((a,b)=>{
+              if(!sortBy){
+                  return 0
+              }else if(sortBy.asc==true){
+                  return (a[sortBy.field] > b[sortBy.field]) ? 1 : ((b[sortBy.field] > a[sortBy.field]) ? -1 : 0)
+              }
+              else if(sortBy.asc==false){
+                return (a[sortBy.field] < b[sortBy.field]) ? 1 : ((b[sortBy.field] < a[sortBy.field]) ? -1 : 0)
+                  
+            }
+            })
+            .map((item, index) => (
               <div key={index} class="col-lg-3 col-sm-6 p-3">
                 <div class="single_product_item d-flex w-100  flex-column align-items-center ">
                   <img
